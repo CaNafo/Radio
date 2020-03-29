@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
     </div>
 
     <!-- Header Section Begin -->
-    <header class="header-section">
+    <header class="header-section" id="header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-2">
@@ -84,11 +84,11 @@ if ($result->num_rows > 0) {
                     <div class="main-menu mobile-menu">
                         <ul>
                             <li class="active"><a href="index.php">Home</a></li>
-                            <li><a href="./about-us.html">About Us</a></li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./gallery.html">Gallery</a>
+                            <li><a href="#" onclick="smoothScroll(document.getElementById('news'))">News</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Gallery</a>
                             </li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -113,37 +113,88 @@ if ($result->num_rows > 0) {
             </div>
         </div>
     </section>
-    <!-- Hero Section End -->
 
-    <!-- About Us Section Begin -->
-    <section class="about-us-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="as-pic">
-                        <img src="<?php echo $photo;?>" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="as-text">
-                        <div class="section-title">
-                            <span>Did you know?</span>
-                            <h2>Daily fun fact</h2>
+    <div id="news">
+        <section class="about-us-section spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="as-pic">
+                            <img src="<?php echo $photo;?>" alt="">
                         </div>
-                        <?php
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="as-text">
+                            <div class="section-title">
+                                <span>Did you know?</span>
+                                <h2>Daily fun fact</h2>
+                            </div>
+                            <?php
                             if ($result->num_rows > 0) {
                                 $row = mysqli_fetch_array($result);
                                 echo "<p class=\"f-para\">".$title."</p>";
                                 echo "<p class=\"f-para\">".$description."</p>";
                             }
                             ?>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+    </div>
+    <!-- Footer Section Begin -->
+    <section class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-option">
+                        <ul>
+                            <li>Address: Yes, we have</li>
+                            <li>Phone: 1 per person</li>
+                            <li>Email: erasmus_beta@hotmail.com</li>
+                        </ul>
+                        <div class="fo-social">
+                            <a onclick="smoothScroll(document.getElementById('header'))"><i class="fa fa-facebook"></i></a>
+                            <a onclick="smoothScroll(document.getElementById('header'))"><i class="fa fa-instagram"></i></a>
+                            <a onclick="smoothScroll(document.getElementById('header'))"><i class="fa fa-twitter"></i></a>
+                            <a onclick="smoothScroll(document.getElementById('header'))"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
         </div>
     </section>
+    <!-- Footer Section End -->
 
     <!-- Js Plugins -->
+    <script>
+        window.smoothScroll = function(target) {
+            var scrollContainer = target;
+            do { //find scroll container
+                scrollContainer = scrollContainer.parentNode;
+                if (!scrollContainer) return;
+                scrollContainer.scrollTop += 1;
+            } while (scrollContainer.scrollTop == 0);
+
+            var targetY = 0;
+            do { //find the top of target relatively to the container
+                if (target == scrollContainer) break;
+                targetY += target.offsetTop;
+            } while (target = target.offsetParent);
+
+            scroll = function(c, a, b, i) {
+                i++; if (i > 30) return;
+                c.scrollTop = a + (b - a) / 30 * i;
+                setTimeout(function(){ scroll(c, a, b, i); }, 20);
+            }
+            // start scrolling
+            scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+            alert("This do nothing, it's here just to look nice!");
+        }
+    </script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
