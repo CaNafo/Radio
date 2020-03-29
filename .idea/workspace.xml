@@ -2,49 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cfa25ad-aaec-4e1a-bc79-9b790784653f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/blog/author-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/blog/author-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/blog/blog-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/blog/blog-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/blog/blog-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/blog/blog-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/blog/blog-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/blog/details/bd-more-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/blog/details/bd-more-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/blog/details/bd-posted.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/blog/details/details-hero.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/blog/details/quote.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/gallery/gallery-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/gallery/gallery-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/gallery/gallery-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/gallery/gallery-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/gallery/gallery-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/gallery/gallery-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/gallery/gallery-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/gallery/gallery-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/instagram/instagram-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/instagram/instagram-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/instagram/instagram-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/instagram/instagram-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/instagram/instagram-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/instagram/instagram-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/member/member-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/member/member-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/member/member-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/member/member-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/member/member-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/member/member-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/portfolio-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/portfolio-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/portfolio-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/portfolio-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/test1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/testimonial/testimonial-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/testimonial/testimonial-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/testimonial/testimonial-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/testimonial/testimonial-4.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="206" column="7" lean-forward="true" selection-start-line="41" selection-end-line="206" selection-end-column="7" />
+            <state relative-caret-position="117">
+              <caret line="197" column="41" selection-start-line="197" selection-start-column="41" selection-end-line="197" selection-end-column="41" />
               <folding>
                 <element signature="e#7#125#0#PHP" expanded="true" />
                 <element signature="e#7940#7946#0#HTML" expanded="true" />
@@ -191,12 +148,12 @@
       <updated>1585494656739</updated>
       <workItem from="1585494660651" duration="2738000" />
       <workItem from="1585505230558" duration="7285000" />
-      <workItem from="1585520515088" duration="3066000" />
+      <workItem from="1585520515088" duration="3786000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13089000" />
+    <option name="totallyTimeSpent" value="13809000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -278,8 +235,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="206" column="7" lean-forward="true" selection-start-line="41" selection-end-line="206" selection-end-column="7" />
+        <state relative-caret-position="117">
+          <caret line="197" column="41" selection-start-line="197" selection-start-column="41" selection-end-line="197" selection-end-column="41" />
           <folding>
             <element signature="e#7#125#0#PHP" expanded="true" />
             <element signature="e#7940#7946#0#HTML" expanded="true" />

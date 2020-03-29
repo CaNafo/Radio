@@ -154,10 +154,10 @@ if ($result->num_rows > 0) {
                             <li>Email: erasmus_beta@hotmail.com</li>
                         </ul>
                         <div class="fo-social">
-                            <a onclick="smoothScroll(document.getElementById('header'))"><i class="fa fa-facebook"></i></a>
-                            <a onclick="smoothScroll(document.getElementById('header'))"><i class="fa fa-instagram"></i></a>
-                            <a onclick="smoothScroll(document.getElementById('header'))"><i class="fa fa-twitter"></i></a>
-                            <a onclick="smoothScroll(document.getElementById('header'))"><i class="fa fa-pinterest"></i></a>
+                            <a onclick="alert(document.getElementById('header'))"><i class="fa fa-facebook"></i></a>
+                            <a onclick="alert(document.getElementById('header'))"><i class="fa fa-instagram"></i></a>
+                            <a onclick="alert(document.getElementById('header'))"><i class="fa fa-twitter"></i></a>
+                            <a onclick="alert(document.getElementById('header'))"><i class="fa fa-pinterest"></i></a>
                         </div>
                     </div>
                 </div>
@@ -192,7 +192,31 @@ if ($result->num_rows > 0) {
             }
             // start scrolling
             scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+        }
+    </script>
+    <script>
+        window.alert = function(target) {
             alert("This do nothing, it's here just to look nice!");
+            var scrollContainer = target;
+            do { //find scroll container
+                scrollContainer = scrollContainer.parentNode;
+                if (!scrollContainer) return;
+                scrollContainer.scrollTop += 1;
+            } while (scrollContainer.scrollTop == 0);
+
+            var targetY = 0;
+            do { //find the top of target relatively to the container
+                if (target == scrollContainer) break;
+                targetY += target.offsetTop;
+            } while (target = target.offsetParent);
+
+            scroll = function(c, a, b, i) {
+                i++; if (i > 30) return;
+                c.scrollTop = a + (b - a) / 30 * i;
+                setTimeout(function(){ scroll(c, a, b, i); }, 20);
+            }
+            // start scrolling
+            scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
         }
     </script>
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -203,5 +227,4 @@ if ($result->num_rows > 0) {
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
 </body>
-
 </html>
