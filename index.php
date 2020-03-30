@@ -71,8 +71,12 @@ if ($result->num_rows > 0) {
         // display name on page
         $("#name-area").html("You are: <span>" + name + "</span>");
 
+        if(name === undefined){
+            name = 'Guest';
+        }
+
         // kick off chat
-        var chat =  new Chat();
+        var chat =  new Chat(name);
         $(function() {
 
             chat.getState();
@@ -131,7 +135,7 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" href="css/chat.css" type="text/css">
 </head>
 
-<body id="body" onload="setInterval('chat.update()', 1000);setInterval(updateScroll,1000);">
+<body id="body" onload="setInterval('chat.update(name)', 1000);setInterval(updateScroll,1000);">
 <!-- Page Preloder -->
 <div id="preloder">
     <div class="loader"></div>
