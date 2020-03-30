@@ -53,14 +53,10 @@ if ($result->num_rows > 0) {
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,500,600,700,800,900&display=swap"
-<<<<<<< HEAD
         rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 
     <script type="text/javascript" src="chat.js"></script>
-=======
-          rel="stylesheet">
->>>>>>> 525d5062a3712a552bbd3b4be3daa27baef55168
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -221,6 +217,23 @@ if ($result->num_rows > 0) {
         </div>
     </section>
 </div>
+<div class = "chat">
+        <section class = "chat-section">
+            <div class = "row">
+                <div class = "col-lg-4">
+                    <div id="content">
+                    <div id="chat-wrap"><div id="chat-area"></div></div>
+                        <form id="send-message-area">
+                            <p>Your message: </p>
+                        <textarea id="sendie" maxlength = '100'></textarea>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+</div>
+
 <!-- Footer Section Begin -->
 <section class="footer-section" id="contact">
     <div class="container">
