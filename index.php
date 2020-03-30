@@ -128,9 +128,10 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/chat.css" type="text/css">
 </head>
 
-<body id="body" onload="setInterval('chat.update()', 1000)">
+<body id="body" onload="setInterval('chat.update()', 1000);setInterval(updateScroll,1000);">
 <!-- Page Preloder -->
 <div id="preloder">
     <div class="loader"></div>
@@ -152,7 +153,7 @@ if ($result->num_rows > 0) {
                     <ul>
                         <li class="active"><a href="index.php">Home</a></li>
                         <li><a href="#" onclick="smoothScroll(document.getElementById('news'),'news')">News</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="#" onclick="smoothScroll(document.getElementById('chat'),'chat')">Chat</a></li>
                         <li><a href="#">Gallery</a>
                         </li>
                         <li><a href="#" onclick="smoothScroll(document.getElementById('news'),'contact')">Contact</a></li>
@@ -209,25 +210,13 @@ if ($result->num_rows > 0) {
         </div>
     </section>
 </div>
-<section>
-    <div class = "chat">
-        <section class = "chat-section">
-            <div class = "row">
-                <div class = "col-lg-4">
-                    <div id="content">
-                        <div id="chat-wrap"><div id="chat-area"></div></div>
-                        <form id="send-message-area">
-                            <p>Your message: </p>
-                            <textarea id="sendie" maxlength = '100'></textarea>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+<div id="chat" style="background-color: #191919; text-align: center; margin: 0 auto;">
+    <div id="messages" style="text-align: left; margin: 0 auto; overflow-y:scroll; height: 300px; width: 50%; background-color: white;">
+        <div id="chat-wrap"><div id="chat-area"></div></div>
     </div>
-
-</section>
+    <p>Your message: </p>
+    <input placeholder="Enter your message and press enter" type="text" id="sendie" maxlength = '100' style="width: 50%"/>
+</div>
 <!-- Footer Section Begin -->
 <section class="footer-section" id="contact">
     <div class="container">
@@ -311,6 +300,11 @@ if ($result->num_rows > 0) {
             // start scrolling
             scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
         }
+    }
+
+    function updateScroll(){
+        var element = document.getElementById("messages");
+        element.scrollTop = element.scrollHeight;
     }
 </script>
 <script src="js/jquery-3.3.1.min.js"></script>
