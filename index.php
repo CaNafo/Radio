@@ -154,7 +154,6 @@ if ($result->num_rows > 0) {
                         <li class="active"><a href="index.php">Home</a></li>
                         <li><a href="#" onclick="smoothScroll(document.getElementById('news'),'news')">News</a></li>
                         <li><a href="#" onclick="smoothScroll(document.getElementById('chat'),'chat')">Chat</a></li>
-                        <li><a href="#">Gallery</a>
                         </li>
                         <li><a href="#" onclick="smoothScroll(document.getElementById('news'),'contact')">Contact</a></li>
                     </ul>
@@ -266,7 +265,7 @@ if ($result->num_rows > 0) {
             scroll = function (c, a, b, i) {
                 i++;
                 if (i > 30) return;
-                c.scrollTop = a + (b - a) / 20 * i;
+                c.scrollTop = a + (b - a) / 10 * i;
                 setTimeout(function () {
                     scroll(c, a, b, i);
                 }, 20);
