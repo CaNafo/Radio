@@ -53,10 +53,14 @@ if ($result->num_rows > 0) {
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,500,600,700,800,900&display=swap"
+<<<<<<< HEAD
         rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 
     <script type="text/javascript" src="chat.js"></script>
+=======
+          rel="stylesheet">
+>>>>>>> 525d5062a3712a552bbd3b4be3daa27baef55168
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -154,98 +158,102 @@ if ($result->num_rows > 0) {
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-10">
-                    <div class="main-menu mobile-menu">
-                        <ul>
-                            <li class="active"><a href="index.php">Home</a></li>
-                            <li><a href="#" onclick="smoothScroll(document.getElementById('news'))">News</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Gallery</a>
-                            </li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-    </header>
-    <!-- Header End -->
-    <!-- Hero Section Begin -->
-    <section class="hero-section set-bg" data-setbg="img/bg1.jpg">
-        <div style=" margin: 0 auto;" >
-            <div class="row" style="margin-top: 90px">
-                <div class="hs-text" style="text-align: center">
-                    <h2 style="color: lightgray; text-shadow: 4px 4px black;">Beta9t Live Radio</h2>
-                    <audio
-                            controls
-                            src="http://82.139.170.124:55970/stream/swyh.mp3">
-                        Your browser does not support the
-                        <code>audio</code> element.
-                    </audio>
+            <div class="col-lg-10 col-md-10">
+                <div class="main-menu mobile-menu">
+                    <ul>
+                        <li class="active"><a href="index.php">Home</a></li>
+                        <li><a href="#" onclick="smoothScroll(document.getElementById('news'),'news')">News</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Gallery</a>
+                        </li>
+                        <li><a href="#" onclick="smoothScroll(document.getElementById('news'),'contact')">Contact</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-
-    <div id="news">
-        <section class="about-us-section spad">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="as-pic">
-                            <img src="<?php echo $photo;?>" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="as-text">
-                            <div class="section-title">
-                                <span>Did you know?</span>
-                                <h2>Daily fun fact</h2>
-                            </div>
-                            <?php
-                            if ($result->num_rows > 0) {
-                                $row = mysqli_fetch_array($result);
-                                echo "<p class=\"f-para\">".$title."</p>";
-                                echo "<p class=\"f-para\">".$description."</p>";
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div id="mobile-menu-wrap"></div>
     </div>
-    <!-- Footer Section Begin -->
-    <section class="footer-section">
+</header>
+<!-- Header End -->
+<!-- Hero Section Begin -->
+<section class="hero-section set-bg" data-setbg="img/bg1.jpg">
+    <div style=" margin: 0 auto;" >
+        <div class="row" style="margin-top: 90px">
+            <div class="hs-text" style="text-align: center">
+                <h2 style="color: lightgray; text-shadow: 4px 4px black;">Beta9t Live Radio</h2>
+                <audio
+                        controls
+                        src="http://82.139.170.124:55970/stream/swyh.mp3">
+                    Your browser does not support the
+                    <code>audio</code> element.
+                </audio>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="news">
+    <section class="about-us-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-option">
-                        <ul>
-                            <li>Address: Yes, we have</li>
-                            <li>Phone: 1 per person</li>
-                            <li>Email: erasmus_beta@hotmail.com</li>
-                        </ul>
-                        <div class="fo-social">
-                            <a onclick="alert(document.getElementById('header'))"><i class="fa fa-facebook"></i></a>
-                            <a onclick="alert(document.getElementById('header'))"><i class="fa fa-instagram"></i></a>
-                            <a onclick="alert(document.getElementById('header'))"><i class="fa fa-twitter"></i></a>
-                            <a onclick="alert(document.getElementById('header'))"><i class="fa fa-pinterest"></i></a>
+                <div class="col-lg-6">
+                    <div class="as-pic">
+                        <img src="<?php echo $photo;?>" style="border-radius: 10px;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="as-text">
+                        <div class="section-title">
+                            <span>Did you know?</span>
+                            <h2>Daily fun fact</h2>
                         </div>
+                        <?php
+                        if ($result->num_rows > 0) {
+                            $row = mysqli_fetch_array($result);
+                            echo "<p class=\"f-para\">".$title."</p>";
+                            echo "<p class=\"f-para\">".$description."</p>";
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
-            <div class="copyright-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
         </div>
     </section>
-    <!-- Footer Section End -->
+</div>
+<!-- Footer Section Begin -->
+<section class="footer-section" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-option">
+                    <ul>
+                        <li>Address: Yes, we have</li>
+                        <li>Phone: 1 per person</li>
+                        <li>Email: erasmus_beta@hotmail.com</li>
+                    </ul>
+                    <div class="fo-social">
+                        <a onclick="smoothScroll(document.getElementById('header'),'nothing')"><i class="fa fa-facebook"></i></a>
+                        <a onclick="smoothScroll(document.getElementById('header'),'nothing')"><i class="fa fa-instagram"></i></a>
+                        <a onclick="smoothScroll(document.getElementById('header'),'nothing')"><i class="fa fa-twitter"></i></a>
+                        <a onclick="smoothScroll(document.getElementById('header'),'nothing')"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+    </div>
+</section>
+<!-- Footer Section End -->
 
-    <!-- Js Plugins -->
-    <script>
-        window.smoothScroll = function(target) {
+<!-- Js Plugins -->
+<script>
+    window.smoothScroll = function(target,id) {
+        if(id=="nothing")
+            alert("This do nothing, it's just here because it looks nice.");
+        else if(id=="contact"){
             var scrollContainer = target;
             do { //find scroll container
                 scrollContainer = scrollContainer.parentNode;
@@ -259,18 +267,19 @@ if ($result->num_rows > 0) {
                 targetY += target.offsetTop;
             } while (target = target.offsetParent);
 
-            scroll = function(c, a, b, i) {
-                i++; if (i > 30) return;
-                c.scrollTop = a + (b - a) / 30 * i;
-                setTimeout(function(){ scroll(c, a, b, i); }, 20);
+            scroll = function (c, a, b, i) {
+                i++;
+                if (i > 30) return;
+                c.scrollTop = a + (b - a) / 20 * i;
+                setTimeout(function () {
+                    scroll(c, a, b, i);
+                }, 20);
             }
             // start scrolling
             scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
         }
-    </script>
-    <script>
-        window.alert = function(target) {
-            alert("This do nothing, it's here just to look nice!");
+
+        if(id!="contact") {
             var scrollContainer = target;
             do { //find scroll container
                 scrollContainer = scrollContainer.parentNode;
@@ -284,21 +293,26 @@ if ($result->num_rows > 0) {
                 targetY += target.offsetTop;
             } while (target = target.offsetParent);
 
-            scroll = function(c, a, b, i) {
-                i++; if (i > 30) return;
+            scroll = function (c, a, b, i) {
+                i++;
+                if (i > 30) return;
                 c.scrollTop = a + (b - a) / 30 * i;
-                setTimeout(function(){ scroll(c, a, b, i); }, 20);
+                setTimeout(function () {
+                    scroll(c, a, b, i);
+                }, 20);
             }
             // start scrolling
             scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
         }
-    </script>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    }
+</script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/mixitup.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
 </body>
+
 </html>
