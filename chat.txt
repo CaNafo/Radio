@@ -152,6 +152,7 @@
 <span>Guest: 3</span>
 <span>Guest: 3</span>
 <span>Guest: 3</span>
+<<<<<<< HEAD
 <span>Guest: ..</span>
 <span>Guest: aaa</span>
 adsad: a
@@ -188,3 +189,8 @@ Guest: 123
 Guest: 123
 Guest: 234
 Guest: 234
+=======
+<span>Canyyyy: test</span>
+<span>Canyyyy: fdsada</span>
+<span>Canyyyy: kfldaskdas4</span>
+>>>>>>> 1a5c1961b74a35cae8b685df71bada6cf7901468
