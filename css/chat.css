@@ -1,11 +1,106 @@
+div.chat {
+    width: 450px;
+    border: solid 1px #EEE;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
 p{
-    border: 1px solid gray;
-    border-radius: 5px;
+    border-radius: 10px;
     color: black;
     padding: 5px;
     margin: 15px;
     width: fit-content;
 }
 
+p.me{
+    align-items: flex-end;
+    color: white;
+    margin-left: 70%;
+    background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+    background-attachment: fixed;
+    position: relative;
+    -webkit-box-shadow: 19px 7px 18px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 19px 7px 18px -4px rgba(0,0,0,0.75);
+    box-shadow: 19px 7px 18px -4px rgba(0,0,0,0.75);
+    word-wrap: break-word;
+    width: 25%;
+
+}   
+
+p.other{
+    align-items: flex-start;
+    margin-right: 40%;
+    background-color: #eee;
+    position: relative;
+    -webkit-box-shadow: -19px 7px 18px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -19px 7px 18px -4px rgba(0,0,0,0.75);
+    box-shadow: -19px 7px 18px -4px rgba(0,0,0,0.75);
+    word-wrap: break-word;
+    width: 25%;
+    
+}
+
+#chat{
+    background-color: #191919; 
+    text-align: center; 
+    margin: 0 auto;
+    position: relative;
+    
+
+}
+
+#messages::before{
+    background: rgba(201, 0, 34, 0.75);
+	border-radius: 50%;
+	content: "";
+	display: block;
+	height: 10px;
+	position: absolute;
+	top: 24%;
+	left: 26%;
+    width: 10px;
+    z-index: 100;
+}
+
+#messages{
+    border-top: 20px solid #c4c4c4;
+    text-align: left; 
+    margin: 0 auto; 
+    overflow-y:scroll; 
+    height: 300px; 
+    width: 50%; 
+    background: rgb(61,61,57);
+    background: linear-gradient(338deg, rgba(61,61,57,1) 29%, rgba(111,172,155,1) 94%);
+    border-radius: 8px;
+}
+
+#messages::-webkit-scrollbar{width: 0 !important;}
+#messages { overflow: -moz-scrollbars-none; }
+
+#sendie{
+    width: 50%;
+    color: #333;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding: 1.0rem 2rem;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    -webkit-box-shadow: 0px 50px 31px -12px rgba(99,22,99,1);
+    -moz-box-shadow: 0px 50px 31px -12px rgba(99,22,99,1);
+    box-shadow: 0px 50px 31px -12px rgba(99,22,99,1);
+
+}
+
+#chat-ad{
+    margin-bottom: 25px;
+    color: white;
+    font-size: 45px;
+    font-weight: 700;
+}
 
 

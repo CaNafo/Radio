@@ -6,12 +6,12 @@ var instanse = false;
 var state;
 var mes;
 var file;
-
+var idUser;
 function Chat (name) {
     this.update = updateChat;
     this.send = sendChat;
 	this.getState = getStateOfChat;
-	this.id = name
+	idUser = name;
 }
 
 //gets the state of the chat
@@ -36,7 +36,7 @@ function getStateOfChat(){
 }
 
 //Updates the chat
-function updateChat(id){
+function updateChat(){
 	 if(!instanse){
 		 instanse = true;
 	     $.ajax({
@@ -53,12 +53,13 @@ function updateChat(id){
 						for (var i = 0; i < data.text.length; i++) {
 							//gets user of incoming...
 							let user = data.text[0].substring(0, data.text[0].indexOf(":"));
-							if (user != id){
-								console.log('user', user);
-								console.log('id', this.id);
-								$('#chat-area').append($("<p class = 'other'>"+ data.text[i] +"</p>"));	
+							console.log('user', user);
+							console.log('id', idUser);
+							if (user == idUser){
+								
+								$('#chat-area').append($("<p class = 'me'>"+ data.text[i] +"</p>"));	
 							} else{
-								$('#chat-area').append($("<p class = 'me'>"+ data.text[i] +"</p>"));
+								$('#chat-area').append($("<p class = 'other'>"+ data.text[i] +"</p>"));
 							}
                             
                         }								  
