@@ -56,7 +56,6 @@ if ($result->num_rows > 0) {
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
     <script type="text/javascript" src="chat.js"></script>
     <script type="text/javascript">
-
         var name = getCookie("chat_username");
         if (name != "") {
             alert("Welcome back " + name+" ^_^");
@@ -165,9 +164,9 @@ if ($result->num_rows > 0) {
 
 <body id="body" onload="setInterval('chat.update(name)', 1000);setInterval(updateScroll,1000);">
 <!-- Page Preloder -->
-<div id="preloder">
+<!--<div id="preloder">
     <div class="loader"></div>
-</div>
+</div> -->>
 
 <!-- Header Section Begin -->
 <header class="header-section" id="header">
@@ -213,13 +212,13 @@ if ($result->num_rows > 0) {
     </div>
 </section>
 
-<div id="news">
+<div id="news" style="height: 600px;">
     <section class="about-us-section spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="as-pic">
-                        <img src="<?php echo $photo;?>" style="border-radius: 10px;" alt="">
+                        <img src="<?php echo $photo;?>" style="border-radius: 10px; height: 600px" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -241,7 +240,6 @@ if ($result->num_rows > 0) {
         </div>
     </section>
 </div>
-
 <div class=".col-sm-4">
     
 </div>
@@ -253,10 +251,12 @@ if ($result->num_rows > 0) {
         <div id="chat-wrap"><div id="chat-area"></div></div>
     </div>
     <input placeholder="Enter your message and press enter" type="text" id="sendie" maxlength = '45'/>
+
+    <div style="display: inline-block;"><input type="checkbox" id="scroll" checked></div><div style="display: inline-block;"><p style="color: white;">Auto scroll chat</p></div>
 </div>
 <!-- Footer Section Begin -->
 <section class="footer-section" id="contact">
-    <div class="container">
+    <div class="container" style="text-align: center;">
         <div class="row"  style="border: 1px solid rebeccapurple; border-radius: 5px; padding-top: 10px;">
             <div class="col-lg-3 col-md-6" >
                 <div class="footer-option">
@@ -274,9 +274,9 @@ if ($result->num_rows > 0) {
                 </div>
             </div>
         </div>
-        <div class="copyright-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+        <p style="color: white; text-align: center;"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This awesome web page is made by Indian guy we payed 2$
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
     </div>
 </section>
 <!-- Footer Section End -->
@@ -340,8 +340,10 @@ if ($result->num_rows > 0) {
     }
 
     function updateScroll(){
-        var element = document.getElementById("chat-area");
-        element.scrollTop = element.scrollHeight;
+        var element = document.getElementById("messages");
+        var scroll = document.getElementById("scroll");
+        if(scroll.checked)
+            element.scrollTop = element.scrollHeight;
     }
 </script>
 <script src="js/jquery-3.3.1.min.js"></script>
