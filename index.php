@@ -77,8 +77,12 @@ if ($result->num_rows > 0) {
             }
         }
 
+        if(name === undefined){
+            name = 'Guest';
+        }
+
         // kick off chat
-        var chat =  new Chat();
+        var chat =  new Chat(name);
         $(function() {
 
             chat.getState();
@@ -159,7 +163,7 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" href="css/chat.css" type="text/css">
 </head>
 
-<body id="body" onload="setInterval('chat.update()', 1000);setInterval(updateScroll,1000);">
+<body id="body" onload="setInterval('chat.update(name)', 1000);setInterval(updateScroll,1000);">
 <!-- Page Preloder -->
 <div id="preloder">
     <div class="loader"></div>
@@ -237,12 +241,18 @@ if ($result->num_rows > 0) {
         </div>
     </section>
 </div>
-<div id="chat" style="background-color: #191919; text-align: center; margin: 0 auto;">
-    <div id="messages" style="text-align: left; margin: 0 auto; overflow-y:scroll; height: 300px; width: 50%; background-color: white;">
+
+<div class=".col-sm-4">
+    
+</div>
+<div id="chat">
+    <div class="as-text">
+        <h2 id="chat-ad">Try our chat!</h2>
+    </div>
+    <div id="messages">
         <div id="chat-wrap"><div id="chat-area"></div></div>
     </div>
-    <p>Your message: </p>
-    <input placeholder="Enter your message and press enter" type="text" id="sendie" maxlength = '100' style="width: 50%"/>
+    <input placeholder="Enter your message and press enter" type="text" id="sendie" maxlength = '45'/>
 </div>
 <!-- Footer Section Begin -->
 <section class="footer-section" id="contact">
@@ -330,7 +340,7 @@ if ($result->num_rows > 0) {
     }
 
     function updateScroll(){
-        var element = document.getElementById("messages");
+        var element = document.getElementById("chat-area");
         element.scrollTop = element.scrollHeight;
     }
 </script>

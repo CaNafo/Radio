@@ -6,11 +6,12 @@ var instanse = false;
 var state;
 var mes;
 var file;
-
-function Chat () {
+var idUser;
+function Chat (name) {
     this.update = updateChat;
     this.send = sendChat;
 	this.getState = getStateOfChat;
+	idUser = name;
 }
 
 //gets the state of the chat
@@ -50,7 +51,17 @@ function updateChat(){
 			   success: function(data){
 				   if(data.text){
 						for (var i = 0; i < data.text.length; i++) {
-                            $('#chat-area').append($("<p>"+ data.text[i] +"</p>"));
+							//gets user of incoming...
+							let user = data.text[0].substring(0, data.text[0].indexOf(":"));
+							console.log('user', user);
+							console.log('id', idUser);
+							if (user == idUser){
+								
+								$('#chat-area').append($("<p class = 'me'>"+ data.text[i] +"</p>"));	
+							} else{
+								$('#chat-area').append($("<p class = 'other'>"+ data.text[i] +"</p>"));
+							}
+                            
                         }								  
 				   }
 				   document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
