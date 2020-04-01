@@ -54,103 +54,6 @@ if ($result->num_rows > 0) {
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,500,600,700,800,900&display=swap"
           rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-    <script type="text/javascript" src="chat.js"></script>
-    <script type="text/javascript">
-        var name = getCookie("chat_username");
-        if (name != "") {
-            alert("Welcome back " + name+" ^_^");
-        } else {
-            // ask user for name with popup prompt
-            var name = prompt("Enter your chat name:", "Guest");
-
-            // default name is 'Guest'
-            if (!name || name === ' ') {
-                name = "Guest";
-            }
-
-            // strip tags
-            name = name.replace(/(<([^>]+)>)/ig,"");
-
-            if (name != "" && name != null) {
-                setCookie("chat_username", name, 365);
-            }
-        }
-
-        if(name === undefined){
-            name = 'Guest';
-        }
-
-        // kick off chat
-        var chat =  new Chat(name);
-        $(function() {
-
-            chat.getState();
-
-            // watch textarea for key presses
-            $("#sendie").keydown(function(event) {
-
-                var key = event.which;
-
-                //all keys including return.
-                if (key >= 33) {
-
-                    var maxLength = $(this).attr("maxlength");
-                    var length = this.value.length;
-
-                    // don't allow new content if length is maxed out
-                    if (length >= maxLength) {
-                        event.preventDefault();
-                    }
-                }
-            });
-            // watch textarea for release of key press
-            $('#sendie').keyup(function(e) {
-
-                if (e.keyCode == 13) {
-
-                    var text = $(this).val();
-                    var maxLength = $(this).attr("maxlength");
-                    var length = text.length;
-
-                    // send
-                    if (length <= maxLength + 1) {
-
-                        chat.send(text, name);
-                        $(this).val("");
-
-                    } else {
-
-                        $(this).val(text.substring(0, maxLength));
-
-                    }
-                }
-            });
-
-        });
-
-        function getCookie(cname) {
-            var name = cname + "=";
-            var ca = document.cookie.split(';');
-            for(var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
-
-        function setCookie(cname, cvalue, exdays) {
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-            var expires = "expires="+d.toUTCString();
-            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
-    </script>
-
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
@@ -164,9 +67,9 @@ if ($result->num_rows > 0) {
 
 <body id="body" onload="setInterval('chat.update(name)', 1000);setInterval(updateScroll,1000);">
 <!-- Page Preloder -->
-<!--<div id="preloder">
+<div id="preloder">
     <div class="loader"></div>
-</div> -->>
+</div>
 
 <!-- Header Section Begin -->
 <header class="header-section" id="header">
@@ -201,11 +104,8 @@ if ($result->num_rows > 0) {
         <div class="row" style="margin-top: 90px">
             <div class="hs-text" style="text-align: center">
                 <h2 style="color: lightgray; text-shadow: 4px 4px black;">Beta9t Live Radio</h2>
-                <audio
-                        controls
-                        src="http://82.139.170.124:55970/stream/swyh.mp3">
-                    Your browser does not support the
-                    <code>audio</code> element.
+                <audio controls src="http://82.139.170.124:55970/stream/swyh.mp3" style="colo: rebeccapurple">
+                    Your browser does not support the <code>audio</code> element.
                 </audio>
             </div>
         </div>
@@ -248,7 +148,7 @@ if ($result->num_rows > 0) {
         <h2 id="chat-ad">Try our chat!</h2>
     </div>
     <div id="messages">
-        <div id="chat-wrap"><div id="chat-area"></div></div>
+        <div id="chat-wrap"><div id="chat-area"><p id="welcome_message" style="text-align: center; font-family:courier,Monaco,helvetica; color: white;"></p> </div></div>
     </div>
     <input placeholder="Enter your message and press enter" type="text" id="sendie" maxlength = '45'/>
 
@@ -282,70 +182,8 @@ if ($result->num_rows > 0) {
 <!-- Footer Section End -->
 
 <!-- Js Plugins -->
-<script>
-    window.smoothScroll = function(target,id) {
-        if(id=="nothing")
-            alert("This do nothing, it's just here because it looks nice.");
-        else if(id=="contact"){
-            var scrollContainer = target;
-            do { //find scroll container
-                scrollContainer = scrollContainer.parentNode;
-                if (!scrollContainer) return;
-                scrollContainer.scrollTop += 1;
-            } while (scrollContainer.scrollTop == 0);
-
-            var targetY = 0;
-            do { //find the top of target relatively to the container
-                if (target == scrollContainer) break;
-                targetY += target.offsetTop;
-            } while (target = target.offsetParent);
-
-            scroll = function (c, a, b, i) {
-                i++;
-                if (i > 30) return;
-                c.scrollTop = a + (b - a) / 10 * i;
-                setTimeout(function () {
-                    scroll(c, a, b, i);
-                }, 20);
-            }
-            // start scrolling
-            scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-        }
-
-        if(id!="contact") {
-            var scrollContainer = target;
-            do { //find scroll container
-                scrollContainer = scrollContainer.parentNode;
-                if (!scrollContainer) return;
-                scrollContainer.scrollTop += 1;
-            } while (scrollContainer.scrollTop == 0);
-
-            var targetY = 0;
-            do { //find the top of target relatively to the container
-                if (target == scrollContainer) break;
-                targetY += target.offsetTop;
-            } while (target = target.offsetParent);
-
-            scroll = function (c, a, b, i) {
-                i++;
-                if (i > 30) return;
-                c.scrollTop = a + (b - a) / 30 * i;
-                setTimeout(function () {
-                    scroll(c, a, b, i);
-                }, 20);
-            }
-            // start scrolling
-            scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-        }
-    }
-
-    function updateScroll(){
-        var element = document.getElementById("messages");
-        var scroll = document.getElementById("scroll");
-        if(scroll.checked)
-            element.scrollTop = element.scrollHeight;
-    }
-</script>
+<script type="text/javascript" src="chat.js"></script>
+<script type="text/javascript" src="js/scrollJS.js"></script>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
