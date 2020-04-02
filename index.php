@@ -112,7 +112,7 @@ if ($result->num_rows > 0) {
     </div>
 </section>
 
-<div id="news" style="height: 600px;">
+<div id="news" >
     <section class="about-us-section spad">
         <div class="container">
             <div class="row">
@@ -152,8 +152,10 @@ if ($result->num_rows > 0) {
     </div>
     <input placeholder="Enter your message and press enter" type="text" id="sendie" maxlength = '45'/>
 
-    <div style="display: inline-block;"><input type="checkbox" id="scroll" checked></div><div style="display: inline-block;"><p style="color: white;">Auto scroll chat</p></div>
-</div>
+    <div style="text-align: center;">
+        <div style="display: inline-block;"><input type="checkbox" id="scroll" checked></div><div style="display: inline-block;"><p style="color: white;">Auto scroll chat</p></div>
+        <button class="btn btn-outline-warning" onclick="setUsername();">Change username</button></div>
+    </div>
 <!-- Footer Section Begin -->
 <section class="footer-section" id="contact">
     <div class="container" style="text-align: center;">

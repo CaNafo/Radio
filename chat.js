@@ -100,20 +100,7 @@ if (name != "") {
     welcome_message("Welcome back " + name+" ^_^ we are happy to see you again!");
 } else {
     // ask user for name with popup prompt
-    var name = prompt("Enter your chat name:", "Guest");
-
-    // default name is 'Guest'
-    if (!name || name === ' ') {
-        name = "Guest";
-    }
-
-    // strip tags
-    name = name.replace(/(<([^>]+)>)/ig,"");
-
-    if (name != "" && name != null) {
-        welcome_message("Welcome " + name+" ^_^ enjoy!");
-        setCookie("chat_username", name, 365);
-    }
+    setUsername();
 }
 
 if(name === undefined){
@@ -192,4 +179,23 @@ function setCookie(cname, cvalue, exdays) {
 
 function welcome_message(message) {
     document.getElementById("welcome_message").innerText = message;
+}
+
+
+
+function setUsername() {
+    var name = prompt("Enter your chat name:", "Guest");
+
+    // default name is 'Guest'
+    if (!name || name === ' ') {
+        name = "Guest";
+    }
+
+    // strip tags
+    name = name.replace(/(<([^>]+)>)/ig,"");
+
+    if (name != "" && name != null) {
+        welcome_message("Welcome " + name+" ^_^ enjoy!");
+        setCookie("chat_username", name, 365);
+    }
 }
